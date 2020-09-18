@@ -1,12 +1,19 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {View} from 'react-native';
 
+import Button from '../../components/Button';
 import style from './style';
 
-function Home() {
+function Home(props) {
+  function navigate(route) {
+    props.navigation.navigate(route);
+  }
+
   return (
     <View style={style.container}>
-      <Text style={style.Text}>Welcome to home screen</Text>
+      <Button onPress={() => navigate('SimpleTextAnimation')}>
+        Simple Text Animation
+      </Button>
     </View>
   );
 }
